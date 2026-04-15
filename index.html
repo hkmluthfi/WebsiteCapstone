@@ -68,12 +68,10 @@
 
         .nav-left:hover { transform: scale(1.02); }
 
-        /* Pengaturan untuk gambar logo PNG */
         .logo-img {
             height: 55px;
             width: auto;
             object-fit: contain;
-            /* Tambahkan border-radius: 50%; di sini jika ingin logonya membulat secara paksa */
         }
 
         .nav-title {
@@ -200,26 +198,18 @@
             position: relative;
         }
 
+        /* PERUBAHAN KHUSUS UNTUK LOGO DI SINI */
         .illustration {
-            width: 420px;
-            height: 420px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #111; 
-            margin-bottom: 25px;
+            width: 100%;
+            max-width: 450px; /* Ukuran maksimal logo */
+            height: auto;
+            object-fit: contain; /* Memastikan proporsi gambar tidak rusak */
+            margin-bottom: 10px;
             animation: float 6s infinite;
-            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.1s ease-out, filter 0.3s ease;
+            /* Menggunakan drop-shadow agar bayangan mengikuti bentuk logo transparan */
+            filter: drop-shadow(0 15px 25px rgba(107, 30, 45, 0.2)); 
             cursor: pointer;
-        }
-
-        .tagline {
-            color: var(--brown);
-            font-size: 30px;
-            font-weight: 800;
-            opacity: 0;
-            animation: fadeInUp 0.8s forwards;
-            animation-delay: 0.8s;
         }
 
         /* --- SECTION 2: TUJUAN --- */
@@ -381,7 +371,6 @@
             perspective: 1000px;
         }
 
-        /* Banner Ajakan Membuka Pop Up Edukasi */
         .edukasi-banner {
             width: 100%;
             background: linear-gradient(135deg, var(--maroon), var(--terracotta));
@@ -784,11 +773,11 @@
                 <p>Platform WebGIS ini menyajikan informasi tingkat risiko bencana yang dihitung dan dipetakan hingga unit terkecil (persil) dengan skala 1:5.000. Sistem ini mengintegrasikan komponen bahaya, kerentanan, dan kapasitas guna mendukung mitigasi wilayah yang presisi dan tepat sasaran.</p>
                 <div><button class="btn-terracotta">Eksplorasi Peta</button></div>
             </div>
+            
             <div class="hero-visual" id="visual-area">
                 <div class="illustration-wrapper">
-                    <img img src="LOGO.png" alt="Logo Tim" class="logo-img">
+                    <img src="LOGO.png" alt="Logo Utama" class="illustration" id="interactive-img">
                 </div>
-                <div class="tagline">Mitigasi Presisi</div>
             </div>
         </div>
     </div>
